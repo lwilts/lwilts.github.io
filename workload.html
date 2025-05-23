@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workloads, Applications, and Services</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Workloads, Applications, and Services</h1>
+
+    <h2>What’s in a name?</h2>
+
+    <p>In the fast-moving and often confusing world of technology and IT, we’re used to words having multiple meanings
+        and interpretations. Every organisation has varying terminology, and many words we use daily have very different
+        meanings in different contexts.</p>
+
+    <p>Three prime examples of this are <strong>“workload”</strong>, <strong>“application”</strong> and
+        <strong>“service”</strong>, which come up a lot when we discuss cloud migration.</p>
+
+    <p>Let’s look at some of the available definitions of these.</p>
+
+    <hr>
+
+    <h2>Workload</h2>
+
+    <blockquote>“The amount of work to be done, especially by a particular person or machine in a period of time.”<br>—
+        <em>Cambridge Dictionary</em></blockquote>
+
+    <p>This generic definition implies a rate of work rather than a single complete task, which differs from what we
+        might think of as a <strong>computing workload</strong>.</p>
+
+    <blockquote>“Any program or application that runs on any computer.”<br>— <em>techtarget.com</em></blockquote>
+
+    <p>This might be a <strong>finite process</strong>, such as a batch processing job, or a <strong>long-running
+            one</strong>, such as an operating system.</p>
+
+    <p>In the cloud era, the definition evolves. According to AWS:</p>
+
+    <blockquote>“A collection of resources and code that delivers business value, such as a customer-facing application
+        or a backend process.”</blockquote>
+
+    <p>This is broader, but it makes sense in a cloud environment where compute, networking, and storage are all
+        virtualised. A database might be a workload in itself, but when tightly coupled with a frontend interface, we
+        could call this one workload.</p>
+
+    <h2>Application</h2>
+
+    <blockquote>“A computer program that is designed for a particular purpose.”<br>— <em>Cambridge Dictionary</em>
+    </blockquote>
+
+    <p>This sounds similar to our computing definition of a workload. The key differentiator seems to be the notion of
+        <strong>“purpose”</strong>.</p>
+
+    <p>We often prepend the word <strong>application</strong> (or <strong>app</strong>) with a purpose: <em>email</em>,
+        <em>banking</em>, <em>dating</em>, <em>backup</em>.</p>
+
+    <p>This definition scales across different situations:</p>
+
+    <ul>
+        <li>A mobile app</li>
+        <li>A backend system (e.g., inventory or CMS)</li>
+    </ul>
+
+    <p>A modern application might just be one component—like a frontend—that connects to other applications, often via
+        APIs.</p>
+
+    <h3>Distinguishing Applications from Workloads</h3>
+
+    <p>A good way to distinguish the two:</p>
+
+    <ul>
+        <li>A <strong>developer writes an application</strong> (code stored in GitHub or published to an app store).
+        </li>
+        <li>It becomes a <strong>workload when it’s run somewhere</strong>—a VM, laptop, phone, or Kubernetes cluster.
+        </li>
+    </ul>
+
+    <h2>Service</h2>
+
+    <p>If you’re a Linux sysadmin, a service is:</p>
+
+    <blockquote>“An application (or set of applications) that runs in the background waiting to be used, or carrying out
+        essential tasks.”<br>— <em>linux.com</em></blockquote>
+
+    <p>We know how to create <strong>services</strong> using <code>systemd</code> to keep programs running.</p>
+
+    <p>At the other end of the spectrum, when discussing user-facing systems:</p>
+
+    <blockquote>“Something that helps [the user] to do something – like learn to drive, buy a house, or become a
+        childminder.”<br>— <em>Government Digital Service</em></blockquote>
+
+    <p>These <strong>human-facing services</strong> require considerations for user experience and UI design.</p>
+
+    <p>In cloud computing, we also hear terms like:</p>
+
+    <ul>
+        <li><strong>Infrastructure as a Service (IaaS)</strong></li>
+        <li><strong>Software as a Service (SaaS)</strong></li>
+    </ul>
+
+    <p>Here, the user gets an interface without needing to run or configure the underlying systems.</p>
+
+    <blockquote>“A mechanism to enable access to one or more capabilities.”<br>— <em>OASIS</em></blockquote>
+
+    <p>This leans toward the <strong>access mechanism</strong> itself being the "service"—arguably accurate in
+        <code>systemd</code> and Kubernetes contexts.</p>
+
+    <p>But in the <strong>government service</strong> sense, a service tends to include:</p>
+
+    <ul>
+        <li>The <strong>user journey</strong></li>
+        <li>The <strong>apps</strong> used along the way</li>
+        <li>The <strong>workloads</strong> that support those apps</li>
+    </ul>
+
+    <h2>Microservices</h2>
+
+    <p>Now, let’s throw a spanner in the works and talk about <strong>microservices</strong>.</p>
+
+    <blockquote>
+        Microservices – or microservice architecture – is an architectural style that structures an application as a
+        collection of services that are:
+        <ul>
+            <li>Highly maintainable and testable</li>
+            <li>Loosely coupled</li>
+            <li>Independently deployable</li>
+            <li>Organised around business capabilities</li>
+            <li>Owned by a small team</li>
+        </ul>
+        — <a href="https://microservices.io">microservices.io</a>
+    </blockquote>
+
+    <p>An application built with microservices is composed of several <strong>underlying services</strong>, each serving
+        a distinct purpose via an API.</p>
+
+    <p>Each of these microservices could be:</p>
+
+    <ul>
+        <li>Considered an <strong>application</strong> in its own right</li>
+        <li>Referred to as a <strong>workload</strong> when deployed (e.g. containers, DB, config)</li>
+    </ul>
+
+    <p>But is a microservice a <strong>“service”</strong> in the user experience or government sense? <strong>Absolutely
+            not.</strong></p>
+
+    <h2>Workload Migration</h2>
+
+    <p><strong>Workloads</strong> are what we at AL prefer to discuss when carrying out <strong>cloud
+            migrations</strong> — after all, if you aren’t running your applications somewhere, they aren’t providing
+        much value.</p>
+
+    <p>Typically, a workload is the <strong>minimum viable unit</strong> for migration because it includes:</p>
+
+    <ul>
+        <li>The application</li>
+        <li>Supporting resources (e.g., storage, networking)</li>
+    </ul>
+
+    <p>Workloads are what underpin the <strong>business value</strong> of a system.</p>
+
+    <p>Sometimes, several related workloads are grouped into a <strong>migration group</strong> based on:</p>
+
+    <ul>
+        <li>Connectivity</li>
+        <li>Latency</li>
+        <li>Security</li>
+        <li>Shared deployment patterns</li>
+    </ul>
+
+    <p>How we plan and execute these migrations — based on business needs, workload characteristics, and source/target
+        environments — is a large topic for another article.</p>
+
+    <p>In the meantime, you can learn more about our <strong>Workload Migration offering</strong> <a href="#">here</a>.
+    </p>
+
+    <h2>Concluding thoughts</h2>
+
+    <p>In many ways, <strong>workloads</strong>, <strong>applications</strong>, and <strong>services</strong> are just
+        different sides of the same (geometrically improbable) coin.</p>
+
+    <p>The subtle differences:</p>
+
+    <ul>
+        <li>A <strong>workload</strong> is an <em>instantiation</em> of an application.</li>
+        <li>A <strong>service</strong> is how that capability is <em>consumed</em>, by a user or another system.</li>
+    </ul>
+
+    <p>There’s a <strong>fractal-like pattern</strong> to these terms:</p>
+
+    <ul>
+        <li>Top level: a user interacts with a <strong>service</strong> → via an <strong>application</strong> → backed
+            by a <strong>workload</strong>.</li>
+        <li>Zoom in: the application may include other applications, services, and workloads.</li>
+        <li>Zoom in further: code-level functions or modules could be seen as workloads by a developer.</li>
+    </ul>
+
+    <p><strong>Essentially — it’s all relative!</strong></p>
+
+    <h2>Final Definitions</h2>
+
+    <ul>
+        <li><strong>Workload</strong>: A tightly coupled group of resources which run and support an application or
+            capability.</li>
+        <li><strong>Application</strong>: A piece of software which fulfils a specific purpose.</li>
+        <li><strong>Service</strong>: The means of facilitating interactions with a workload in order to utilise its
+            capabilities and fulfil a job to be done.</li>
+    </ul>
+
+    <p>Ultimately, what matters is that what you create provides <strong>business value</strong>. It’s very difficult to
+        use terminology in a completely consistent way, but that’s OK — as long as users get value, and teams can
+        collaborate with shared meaning to generate that value.</p>
+
+</body>
+
+</html>
